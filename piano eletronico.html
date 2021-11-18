@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>            
+    <script  src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bateria eletronica</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            font: 15px Arial;
+        }
+        #drum-machine{
+            display: grid;
+            margin-top: 30vh;
+            margin-left: 100px;
+            margin-right: 100px;
+            grid-template-columns: 300px 200px;
+            align-items: center;
+            border-color: blue;
+            border-radius: 10px;
+            border-style: solid;
+        }
+        #display{
+            background-color: rgb(126, 126, 126);
+            width: 150px;
+            height: 5vh;
+        }
+        #nome-som{
+            text-align: center;
+        }
+        .drum-pad{
+            font: 30px Arial;
+            margin: 2vh 2vh;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+        }
+        #bQ{
+            background-color: white;
+        }
+        #bW{
+            background-color: white;
+        }
+        #bE{
+            background-color: white;
+        }
+        #bA{
+            background-color: white;
+        }
+        #bS{
+            background-color: white;
+        }
+        #bD{
+            background-color: white;
+        }
+        #bZ{
+            background-color: white;
+        }
+        #bX{
+            background-color: white;
+        }
+        #bC{
+            background-color: white;
+        }
+    @media (max-width: 670px) { 
+        #drum-machine{
+            margin-left: 0vw;
+            margin-right: 0vw;
+        }
+    }
+    @media (min-width: 800px) { 
+        #drum-machine{
+            margin-left: 150px;
+            margin-right: 150px;
+        }
+    }
+    @media (min-width: 900px) { 
+        #drum-machine{
+            margin-left: 200px;
+            margin-right: 200px;
+        }
+    }
+    @media (min-width: 1000px) { 
+        #drum-machine{
+            margin-left: 250px;
+            margin-right: 250px;
+        }
+    }
+    @media (min-width: 1100px) { 
+        #drum-machine{
+            margin-left: 300px;
+            margin-right: 300px;
+        }
+    }
+    @media (min-width: 1200px) { 
+        #drum-machine{
+            margin-left: 350px;
+            margin-right: 350px;
+        }
+}
+    @media (min-width: 1300px) { 
+        #drum-machine{
+            margin-left: 400px;
+            margin-right: 400px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id='drum-machine'>
+        
+    </div>
+</body>
+<script type='text/babel'>
+    class Som extends React.Component { 
+  constructor(props) {
+    super(props);
+  }
+  render(){ 
+    return(
+        <>
+        <div id='teclas'></div>
+    <div id='display'> 
+     <p id='nome-som'> {this.props.som} </p>
+    </div>
+    </>
+    )
+  }
+  }
+
+  class Teclas extends React.Component { 
+  constructor(props) {
+    super(props);
+  }
+  clicarQ(){
+    document.getElementById('bQ').animate({backgroundColor: ['white', 'red']}, 100)
+    let audio = document.getElementById('Q')
+    audio.play()
+    ReactDOM.render(<Som som='som 1'/>, document.getElementById('nome-som'))
+  }
+  clicarW(){
+    document.getElementById('bW').animate({backgroundColor: ['white', 'red']}, 100)
+    let audio = document.getElementById('W')
+    audio.play()
+    ReactDOM.render(<Som som='som 2'/>, document.getElementById('nome-som'))
+  }
+  clicarE(){
+    document.getElementById('bE').animate({backgroundColor: ['white', 'red']}, 100)
+    let audio = document.getElementById('E')
+    audio.play()
+    ReactDOM.render(<Som som='som 3'/>, document.getElementById('nome-som'))
+  }
+  clicarA(){
+    document.getElementById('bA').animate({backgroundColor: ['white', 'red']}, 100)
+    let audio = document.getElementById('A')
+    audio.play()
+    ReactDOM.render(<Som som='som 4'/>, document.getElementById('nome-som'))
+  }
+  clicarS(){
+    document.getElementById('bS').animate({backgroundColor: ['white', 'red']}, 100)
+    let audio = document.getElementById('S')
+    audio.play()
+    ReactDOM.render(<Som som='som 5'/>, document.getElementById('nome-som'))
+  }
+  clicarD(){
+    document.getElementById('bD').animate({backgroundColor: ['white', 'red']}, 100)
+    let audio = document.getElementById('D')
+    audio.play()
+    ReactDOM.render(<Som som='som 6'/>, document.getElementById('nome-som'))
+  }
+  clicarZ(){
+    document.getElementById('bZ').animate({backgroundColor: ['white', 'red']}, 100)
+    let audio = document.getElementById('Z')
+    audio.play()
+    ReactDOM.render(<Som som='som 7'/>, document.getElementById('nome-som'))
+  }
+  clicarX(){
+    document.getElementById('bX').animate({backgroundColor: ['white', 'red']}, 100)
+    let audio = document.getElementById('Z')
+    audio.play()
+    ReactDOM.render(<Som som='som 8'/>, document.getElementById('nome-som'))
+  }
+  clicarC(){
+    document.getElementById('bC').animate({backgroundColor: ['white', 'red']}, 100)
+    let audio = document.getElementById('C')
+    audio.play()
+    ReactDOM.render(<Som som='som 9'/>, document.getElementById('nome-som'))
+  }
+  render(){ 
+    document.addEventListener('keydown', function(e) {
+    if(e.key == "q"){
+      document.getElementById("bQ").click();
+    }
+})
+    document.addEventListener('keydown', function(e) {
+    if(e.key == "w"){
+      document.getElementById("bW").click();
+    }
+})
+    document.addEventListener('keydown', function(e) {
+    if(e.key == "e"){
+      document.getElementById("bE").click();
+    }
+})
+    document.addEventListener('keydown', function(e) {
+    if(e.key == "a"){
+      document.getElementById("bA").click();
+    }
+})
+    document.addEventListener('keydown', function(e) {
+    if(e.key == "s"){
+      document.getElementById("bS").click();
+    }
+})
+    document.addEventListener('keydown', function(e) {
+    if(e.key == "d"){
+      document.getElementById("bD").click();
+    }
+})
+    document.addEventListener('keydown', function(e) {
+    if(e.key == "z"){
+      document.getElementById("bZ").click();
+    }
+})
+    document.addEventListener('keydown', function(e) {
+    if(e.key == "x"){
+      document.getElementById("bX").click();
+    }
+})
+    document.addEventListener('keydown', function(e) {
+    if(e.key == "c"){
+      document.getElementById("bC").click();
+    }
+})
+    return(
+        <>
+        <button class='drum-pad' id='bQ' onClick={this.clicarQ}> Q <audio id='Q' class='clip' src=''></audio></button> <button class='drum-pad' id='bW' onClick={this.clicarW}> W <audio id='W' class='clip' src=''></audio></button> <button class='drum-pad' id='bE' onClick={this.clicarE} > E <audio class='clip' id='E' src=''></audio></button> <br/>
+        <button class='drum-pad' id='bA' onClick={this.clicarA} > A <audio id='A' class='clip' src=''></audio></button> <button class='drum-pad' id='bS' onClick={this.clicarS} > S <audio id='S' class='clip' src=''></audio></button> <button class='drum-pad' id='bD' onClick={this.clicarD} > D <audio class='clip' id='D' src=''></audio></button> <br/>
+        <button class='drum-pad' id='bZ' onClick={this.clicarZ}> Z <audio id='Z' class='clip' src=''></audio></button> <button class='drum-pad' id='bX' onClick={this.clicarX}> X <audio id='X' class='clip' src=''></audio></button> <button class='drum-pad' id='bC' onClick={this.clicarC}> C <audio class='clip' id='C' src=''></audio></button>
+    </>
+    )
+    }
+  }
+    let teste= 'certo'
+  ReactDOM.render(<Som />, document.getElementById('drum-machine'))
+  ReactDOM.render(<Teclas />, document.getElementById('teclas'))
+</script>
+</html>
